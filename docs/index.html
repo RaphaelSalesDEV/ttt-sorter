@@ -20,36 +20,61 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 16px;
         }
 
         .container {
             background: #0a0a0a;
             border: 2px solid #ff6b35;
-            border-radius: 20px;
-            padding: 40px;
+            border-radius: 16px;
+            padding: 24px;
             box-shadow: 0 20px 60px rgba(255, 107, 53, 0.3);
-            max-width: 500px;
+            max-width: 550px;
             width: 100%;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h1 {
             text-align: center;
             color: #ff6b35;
-            margin-bottom: 10px;
-            font-size: 2.5em;
+            margin-bottom: 8px;
+            font-size: 2.2em;
             text-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+            letter-spacing: 1px;
         }
 
         .subtitle {
             text-align: center;
             color: #999;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
+            font-size: 0.95em;
+            letter-spacing: 0.5px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.05) 100%);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            padding: 14px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            color: #ccc;
             font-size: 0.9em;
+            line-height: 1.5;
         }
 
         .input-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         label {
@@ -57,120 +82,187 @@
             margin-bottom: 8px;
             color: #ff6b35;
             font-weight: 600;
+            font-size: 0.95em;
+            letter-spacing: 0.5px;
         }
 
         input {
             width: 100%;
-            padding: 12px;
+            padding: 12px 14px;
             border: 2px solid #333;
             background: #1a1a1a;
             color: #fff;
             border-radius: 8px;
             font-size: 16px;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
         }
 
         input:focus {
             outline: none;
             border-color: #ff6b35;
-            box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 0 15px rgba(255, 107, 53, 0.3);
+            background: #252525;
         }
 
         button {
             width: 100%;
-            padding: 15px;
+            padding: 13px 16px;
             border: none;
             border-radius: 8px;
-            font-size: 16px;
+            font-size: 0.95em;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             margin-bottom: 10px;
+            letter-spacing: 0.5px;
         }
 
         .btn-primary {
             background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
             color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.5);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
         }
 
         .btn-secondary {
             background: #1a1a1a;
             color: #ff6b35;
             border: 2px solid #ff6b35;
+            transition: all 0.3s;
         }
 
         .btn-secondary:hover {
             background: #2d2d2d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-secondary:active {
+            transform: translateY(0);
         }
 
         .btn-ready {
             background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
             color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
         }
 
-        .btn-ready:hover {
+        .btn-ready:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.5);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
         }
 
         .btn-ready:disabled {
-            background: #333;
+            background: linear-gradient(135deg, #444 0%, #333 100%);
             color: #666;
             cursor: not-allowed;
             transform: none;
-            box-shadow: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
         }
 
         .room-code-display {
-            background: #1a1a1a;
-            border: 2px solid #333;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(247, 147, 30, 0.08) 100%);
+            border: 2px solid rgba(255, 107, 53, 0.4);
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             text-align: center;
             margin-bottom: 20px;
         }
 
+        .room-code-display p {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .room-code-display h2 {
             color: #ff6b35;
-            font-size: 2em;
-            letter-spacing: 5px;
-            margin-top: 10px;
-            text-shadow: 0 0 15px rgba(255, 107, 53, 0.5);
+            font-size: 2.5em;
+            letter-spacing: 6px;
+            margin-top: 8px;
+            text-shadow: 0 0 20px rgba(255, 107, 53, 0.6);
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
         }
 
         .players-list {
             background: #1a1a1a;
             border: 2px solid #333;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 18px;
+            border-radius: 12px;
             margin-bottom: 20px;
         }
 
         .players-list h3 {
             color: #ff6b35;
-            margin-bottom: 15px;
+            margin-bottom: 14px;
+            font-size: 1.05em;
+            letter-spacing: 0.5px;
+        }
+
+        .players-scroll {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 8px;
+        }
+
+        .players-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .players-scroll::-webkit-scrollbar-track {
+            background: #0a0a0a;
+            border-radius: 10px;
+        }
+
+        .players-scroll::-webkit-scrollbar-thumb {
+            background: #ff6b35;
+            border-radius: 10px;
         }
 
         .player-item {
             background: #0a0a0a;
             border: 1px solid #333;
-            padding: 12px;
+            padding: 12px 14px;
             border-radius: 8px;
             margin-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             color: #fff;
+            transition: all 0.3s;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .player-item:hover {
+            border-color: #ff6b35;
+            background: #1a1a1a;
         }
 
         .player-icon {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
             display: flex;
@@ -178,21 +270,53 @@
             justify-content: center;
             color: white;
             font-weight: bold;
+            font-size: 1.1em;
+            flex-shrink: 0;
+            box-shadow: 0 2px 10px rgba(255, 107, 53, 0.4);
+        }
+
+        .player-name {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .crown {
             color: #ffd700;
+            font-size: 1.2em;
             margin-left: auto;
+            flex-shrink: 0;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
 
         .role-reveal {
             text-align: center;
-            padding: 40px;
+            padding: 30px 20px;
+            animation: roleRevealAnim 0.6s ease-out;
+        }
+
+        @keyframes roleRevealAnim {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .role-reveal h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+            font-size: 1.5em;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+
+        .role-reveal h1 {
+            font-size: 3.2em;
+            margin: 20px 0;
+            text-shadow: 0 0 30px currentColor;
         }
 
         .role-traitor {
@@ -208,29 +332,219 @@
         }
 
         .role-description {
-            color: #999;
-            margin-top: 20px;
-            line-height: 1.6;
+            color: #bbb;
+            margin-top: 18px;
+            line-height: 1.7;
+            font-size: 0.95em;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 4px solid currentColor;
         }
 
         .hidden {
-            display: none;
+            display: none !important;
         }
 
         .error {
             background: #2d1a1a;
             color: #ff6b35;
-            border: 1px solid #ff6b35;
-            padding: 10px;
+            border: 2px solid #ff6b35;
+            padding: 12px 14px;
             border-radius: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             text-align: center;
+            font-size: 0.9em;
+            animation: errorShake 0.3s ease-out;
+        }
+
+        @keyframes errorShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-8px); }
+            75% { transform: translateX(8px); }
         }
 
         .divider {
             text-align: center;
-            margin: 20px 0;
-            color: #666;
+            margin: 18px 0;
+            color: #555;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .header-info {
+            background: rgba(255, 107, 53, 0.08);
+            border-left: 4px solid #ff6b35;
+            padding: 12px 14px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .role-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Responsivo para tablets */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                border-radius: 14px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 6px;
+            }
+
+            .subtitle {
+                font-size: 0.85em;
+                margin-bottom: 20px;
+            }
+
+            button {
+                font-size: 0.9em;
+                padding: 11px 14px;
+            }
+
+            .room-code-display h2 {
+                font-size: 2em;
+                letter-spacing: 4px;
+            }
+
+            .role-reveal h1 {
+                font-size: 2.5em;
+            }
+
+            input {
+                font-size: 16px;
+            }
+        }
+
+        /* Responsivo para mobile */
+        @media (max-width: 480px) {
+            body {
+                padding: 12px;
+            }
+
+            .container {
+                padding: 18px;
+                border-radius: 12px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                margin-bottom: 4px;
+            }
+
+            .subtitle {
+                font-size: 0.8em;
+                margin-bottom: 16px;
+            }
+
+            .info-box {
+                padding: 12px;
+                font-size: 0.85em;
+                margin-bottom: 16px;
+            }
+
+            .input-group {
+                margin-bottom: 14px;
+            }
+
+            label {
+                font-size: 0.9em;
+                margin-bottom: 6px;
+            }
+
+            input {
+                padding: 11px 12px;
+                font-size: 16px;
+            }
+
+            button {
+                padding: 11px 12px;
+                font-size: 0.9em;
+                margin-bottom: 8px;
+            }
+
+            .divider {
+                margin: 14px 0;
+                font-size: 0.9em;
+            }
+
+            .room-code-display {
+                padding: 16px;
+                margin-bottom: 16px;
+            }
+
+            .room-code-display h2 {
+                font-size: 1.8em;
+                letter-spacing: 4px;
+            }
+
+            .players-list {
+                padding: 14px;
+                margin-bottom: 16px;
+            }
+
+            .players-list h3 {
+                font-size: 0.95em;
+                margin-bottom: 10px;
+            }
+
+            .players-scroll {
+                max-height: 250px;
+            }
+
+            .player-item {
+                padding: 10px 12px;
+                margin-bottom: 6px;
+                gap: 10px;
+            }
+
+            .player-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 0.95em;
+            }
+
+            .role-reveal {
+                padding: 20px 16px;
+            }
+
+            .role-reveal h1 {
+                font-size: 2em;
+            }
+
+            .role-reveal h2 {
+                font-size: 1.2em;
+                margin-bottom: 12px;
+            }
+
+            .role-description {
+                font-size: 0.85em;
+                padding: 12px;
+                margin-top: 14px;
+                line-height: 1.6;
+            }
+
+            .error {
+                padding: 10px 12px;
+                font-size: 0.85em;
+                margin-bottom: 12px;
+            }
+
+            .header-info {
+                font-size: 0.85em;
+                padding: 10px 12px;
+                margin-bottom: 16px;
+            }
         }
     </style>
 </head>
@@ -241,21 +555,25 @@
             <h1>🎮 TTT Sorter</h1>
             <p class="subtitle">Trouble in Terrorist Town - CS2</p>
             
+            <div class="info-box">
+                <strong>Bem-vindo!</strong> Crie uma sala ou entre em uma existente para sortear funções no jogo TTT. Mínimo 4 jogadores para começar.
+            </div>
+
             <div class="input-group">
-                <label for="playerName">Seu Nome</label>
+                <label for="playerName">👤 Seu Nome</label>
                 <input type="text" id="playerName" placeholder="Digite seu nome" maxlength="20">
             </div>
 
-            <button class="btn-primary" onclick="createRoom()">Criar Sala</button>
+            <button class="btn-primary" onclick="createRoom()">➕ Criar Nova Sala</button>
             
-            <div class="divider">ou</div>
+            <div class="divider">OU</div>
 
             <div class="input-group">
-                <label for="roomCode">Código da Sala</label>
-                <input type="text" id="roomCode" placeholder="Digite o código" maxlength="6" style="text-transform: uppercase;">
+                <label for="roomCode">🔑 Código da Sala</label>
+                <input type="text" id="roomCode" placeholder="Ex: ABC123" maxlength="6" style="text-transform: uppercase;">
             </div>
 
-            <button class="btn-secondary" onclick="joinRoom()">Entrar na Sala</button>
+            <button class="btn-secondary" onclick="joinRoom()">🚪 Entrar na Sala</button>
 
             <div id="error-message" class="error hidden"></div>
         </div>
@@ -265,36 +583,44 @@
             <h1>🎮 Sala TTT</h1>
             
             <div class="room-code-display">
-                <p style="color: #666;">Código da Sala</p>
+                <p>Código da Sala</p>
                 <h2 id="displayRoomCode">------</h2>
             </div>
 
+            <div class="header-info">
+                💡 <strong>Dica:</strong> Compartilhe o código com seus amigos para eles entrarem na sala. Mínimo 4 jogadores para iniciar o sorteio.
+            </div>
+
             <div class="players-list">
-                <h3>Jogadores (<span id="playerCount">0</span>/∞)</h3>
-                <div id="playersList"></div>
+                <h3>👥 Jogadores (<span id="playerCount">0</span>/∞)</h3>
+                <div class="players-scroll">
+                    <div id="playersList"></div>
+                </div>
             </div>
 
             <button id="readyBtn" class="btn-ready hidden" onclick="startGame()" disabled>
-                Iniciar Sorteio (Mínimo 4 jogadores)
+                🎲 Iniciar Sorteio (Mínimo 4 jogadores)
             </button>
 
-            <button class="btn-secondary" onclick="leaveRoom()">Sair da Sala</button>
+            <button class="btn-secondary" onclick="leaveRoom()">❌ Sair da Sala</button>
+
+            <div id="error-message-room" class="error hidden"></div>
         </div>
 
         <!-- Tela de Resultado -->
         <div id="result-screen" class="hidden">
             <div class="role-reveal">
-                <h2 id="roleTitle" class="role-innocent">Sua Função</h2>
-                <h1 id="roleName" style="font-size: 3em;">INOCENTE</h1>
+                <h2 id="roleTitle" class="role-innocent">Sua Função foi Sorteada!</h2>
+                <span class="role-icon" id="roleIcon">👤</span>
+                <h1 id="roleName" class="role-innocent">INOCENTE</h1>
                 <p class="role-description" id="roleDescription"></p>
             </div>
 
-            <button class="btn-secondary" onclick="backToHome()">Voltar ao Início</button>
+            <button class="btn-secondary" onclick="backToHome()">🏠 Voltar ao Início</button>
         </div>
     </div>
 
     <script>
-        // Configuração do Firebase (usando um projeto de demonstração)
         // Configuração do Firebase
         const firebaseConfig = {
             apiKey: "AIzaSyAXktMTbzOJR8A_s5Z5Uxdr3HX-TxafLq0",
@@ -307,27 +633,23 @@
             measurementId: "G-ZM9KKDRS3Z"
         };
 
-        // Inicializar Firebase
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
 
-        // Variáveis globais
         let currentRoom = null;
         let currentPlayer = null;
         let isHost = false;
         let roomRef = null;
 
-        // Gerar código de sala aleatório
         function generateRoomCode() {
             return Math.random().toString(36).substring(2, 8).toUpperCase();
         }
 
-        // Criar sala
         function createRoom() {
             const playerName = document.getElementById('playerName').value.trim();
             
             if (!playerName) {
-                showError('Por favor, digite seu nome!');
+                showError('Por favor, digite seu nome!', 'home-screen');
                 return;
             }
 
@@ -339,7 +661,6 @@
             };
             isHost = true;
 
-            // Criar sala no Firebase
             database.ref('rooms/' + roomCode).set({
                 host: currentPlayer.id,
                 players: {
@@ -354,22 +675,21 @@
                 showRoomScreen();
                 listenToRoom();
             }).catch(error => {
-                showError('Erro ao criar sala: ' + error.message);
+                showError('Erro ao criar sala: ' + error.message, 'home-screen');
             });
         }
 
-        // Entrar na sala
         function joinRoom() {
             const playerName = document.getElementById('playerName').value.trim();
             const roomCode = document.getElementById('roomCode').value.trim().toUpperCase();
             
             if (!playerName) {
-                showError('Por favor, digite seu nome!');
+                showError('Por favor, digite seu nome!', 'home-screen');
                 return;
             }
 
             if (!roomCode || roomCode.length !== 6) {
-                showError('Por favor, digite um código válido!');
+                showError('Por favor, digite um código válido com 6 caracteres!', 'home-screen');
                 return;
             }
 
@@ -380,20 +700,18 @@
             };
             isHost = false;
 
-            // Verificar se a sala existe
             database.ref('rooms/' + roomCode).once('value').then(snapshot => {
                 if (!snapshot.exists()) {
-                    showError('Sala não encontrada!');
+                    showError('Sala não encontrada!', 'home-screen');
                     return;
                 }
 
                 const room = snapshot.val();
                 if (room.status !== 'waiting') {
-                    showError('Esta sala já começou o jogo!');
+                    showError('Esta sala já começou o jogo!', 'home-screen');
                     return;
                 }
 
-                // Adicionar jogador à sala
                 database.ref('rooms/' + roomCode + '/players/' + currentPlayer.id).set({
                     name: playerName,
                     joinedAt: Date.now()
@@ -402,11 +720,10 @@
                     listenToRoom();
                 });
             }).catch(error => {
-                showError('Erro ao entrar na sala: ' + error.message);
+                showError('Erro ao entrar na sala: ' + error.message, 'home-screen');
             });
         }
 
-        // Ouvir mudanças na sala
         function listenToRoom() {
             roomRef = database.ref('rooms/' + currentRoom);
             
@@ -414,12 +731,11 @@
                 const room = snapshot.val();
                 
                 if (!room) {
-                    showError('A sala foi fechada!');
-                    backToHome();
+                    showError('A sala foi fechada!', 'room-screen');
+                    setTimeout(() => backToHome(), 2000);
                     return;
                 }
 
-                // Atualizar lista de jogadores
                 const players = room.players || {};
                 const playersList = document.getElementById('playersList');
                 const playerCount = Object.keys(players).length;
@@ -434,26 +750,24 @@
                     const initial = player.name.charAt(0).toUpperCase();
                     div.innerHTML = `
                         <div class="player-icon">${initial}</div>
-                        <span>${player.name}</span>
+                        <span class="player-name">${player.name}</span>
                         ${id === room.host ? '<span class="crown">👑</span>' : ''}
                     `;
                     playersList.appendChild(div);
                 });
 
-                // Atualizar botão ready
                 const readyBtn = document.getElementById('readyBtn');
                 if (isHost) {
                     readyBtn.classList.remove('hidden');
                     if (playerCount >= 4) {
                         readyBtn.disabled = false;
-                        readyBtn.textContent = `Iniciar Sorteio (${playerCount} jogadores)`;
+                        readyBtn.textContent = `🎲 Iniciar Sorteio (${playerCount} jogadores)`;
                     } else {
                         readyBtn.disabled = true;
-                        readyBtn.textContent = `Iniciar Sorteio (Mínimo 4 jogadores - ${playerCount}/4)`;
+                        readyBtn.textContent = `🎲 Iniciar Sorteio (Mínimo 4 jogadores - ${playerCount}/4)`;
                     }
                 }
 
-                // Verificar se o jogo começou
                 if (room.status === 'started' && room.roles) {
                     const myRole = room.roles[currentPlayer.id];
                     if (myRole) {
@@ -463,18 +777,16 @@
             });
         }
 
-        // Iniciar jogo
         function startGame() {
             database.ref('rooms/' + currentRoom + '/players').once('value').then(snapshot => {
                 const players = snapshot.val();
                 const playerIds = Object.keys(players);
                 
                 if (playerIds.length < 4) {
-                    showError('Mínimo de 4 jogadores necessário!');
+                    showError('Mínimo de 4 jogadores necessário!', 'room-screen');
                     return;
                 }
 
-                // Sortear funções
                 const shuffled = [...playerIds].sort(() => Math.random() - 0.5);
                 const traitor = shuffled[0];
                 const detective = shuffled[1];
@@ -490,7 +802,6 @@
                     }
                 });
 
-                // Atualizar sala
                 database.ref('rooms/' + currentRoom).update({
                     status: 'started',
                     roles: roles,
@@ -499,42 +810,43 @@
             });
         }
 
-        // Mostrar função do jogador
         function showRole(role) {
             const roleTitle = document.getElementById('roleTitle');
             const roleName = document.getElementById('roleName');
             const roleDescription = document.getElementById('roleDescription');
+            const roleIcon = document.getElementById('roleIcon');
 
             switch(role) {
                 case 'traitor':
                     roleTitle.className = 'role-traitor';
-                    roleName.textContent = '🔪 IMPOSTOR';
+                    roleIcon.textContent = '🔪';
+                    roleName.textContent = 'IMPOSTOR';
                     roleName.className = 'role-traitor';
-                    roleDescription.textContent = 'Você é o impostor! Elimine os inocentes sem ser descoberto. Cuidado com o xerife!';
+                    roleDescription.textContent = 'Você é o impostor! 🔪\n\nSua missão é eliminar os inocentes sem ser descoberto. Cuidado com o xerife! Use suas habilidades de engano e trabalhe nos objetivos da equipe dos impostores.';
                     break;
                 case 'detective':
                     roleTitle.className = 'role-detective';
-                    roleName.textContent = '🔍 XERIFE';
+                    roleIcon.textContent = '🔍';
+                    roleName.textContent = 'XERIFE';
                     roleName.className = 'role-detective';
-                    roleDescription.textContent = 'Você é o xerife! Proteja os inocentes e descubra quem é o impostor.';
+                    roleDescription.textContent = 'Você é o xerife! 🔍\n\nProteja os inocentes e descubra quem é o impostor. Você pode verificar jogadores e tem a capacidade de eliminar o impostor durante o jogo.';
                     break;
                 default:
                     roleTitle.className = 'role-innocent';
-                    roleName.textContent = '👤 INOCENTE';
+                    roleIcon.textContent = '👤';
+                    roleName.textContent = 'INOCENTE';
                     roleName.className = 'role-innocent';
-                    roleDescription.textContent = 'Você é inocente! Sobreviva e ajude o xerife a encontrar o impostor.';
+                    roleDescription.textContent = 'Você é inocente! 👤\n\nSobreviva e ajude o xerife a encontrar o impostor. Trabalhe com os outros inocentes para identificar quem está entre vós. Cumpra os objetivos e mantenha-se alerta!';
             }
 
             document.getElementById('room-screen').classList.add('hidden');
             document.getElementById('result-screen').classList.remove('hidden');
         }
 
-        // Sair da sala
         function leaveRoom() {
             if (roomRef && currentPlayer) {
                 database.ref('rooms/' + currentRoom + '/players/' + currentPlayer.id).remove();
                 
-                // Se for o host, deletar a sala
                 if (isHost) {
                     database.ref('rooms/' + currentRoom).remove();
                 }
@@ -545,7 +857,6 @@
             backToHome();
         }
 
-        // Voltar ao início
         function backToHome() {
             if (roomRef) {
                 roomRef.off();
@@ -562,38 +873,36 @@
             document.getElementById('playerName').value = '';
             document.getElementById('roomCode').value = '';
             document.getElementById('error-message').classList.add('hidden');
+            document.getElementById('error-message-room').classList.add('hidden');
         }
 
-        // Mostrar tela da sala
         function showRoomScreen() {
             document.getElementById('home-screen').classList.add('hidden');
             document.getElementById('room-screen').classList.remove('hidden');
             document.getElementById('displayRoomCode').textContent = currentRoom;
         }
 
-        // Mostrar erro
-        function showError(message) {
-            const errorDiv = document.getElementById('error-message');
+        function showError(message, screen) {
+            const errorId = screen === 'home-screen' ? 'error-message' : 'error-message-room';
+            const errorDiv = document.getElementById(errorId);
             errorDiv.textContent = message;
             errorDiv.classList.remove('hidden');
             setTimeout(() => {
                 errorDiv.classList.add('hidden');
-            }, 3000);
+            }, 4000);
         }
 
-        // Limpar salas antigas (opcional - executar periodicamente)
         setInterval(() => {
             const now = Date.now();
             database.ref('rooms').once('value').then(snapshot => {
                 snapshot.forEach(childSnapshot => {
                     const room = childSnapshot.val();
-                    // Remover salas com mais de 2 horas
                     if (room.createdAt && (now - room.createdAt) > 7200000) {
                         childSnapshot.ref.remove();
                     }
                 });
             });
-        }, 300000); // A cada 5 minutos
+        }, 300000);
     </script>
 </body>
 </html>
